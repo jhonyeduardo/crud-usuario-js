@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="userModule">
+    <head>
+        <meta charset="utf-8">
+        <title>Usuários :: Treasy</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="container content">
+            <div ng-controller="UserController as controller">
+                <div class="div-header">
+                    <button type="button" class="btn btn-primary" ng-click="controller.showFormUser()">
+                        <span class="glyphicon glyphicon-plus"></span> Adicionar
+                    </button>
+                    <div class="input-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <span class="input-group-addon" id="search-addon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </span>
+                        <input type="text" class="form-control" 
+                               ng-model="controller.search" ng-model-options="{ debounce: 500 }"
+                               placeholder="Pesquise aqui" aria-describedby="search-addon">
+                    </div>
+                </div>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="user in controller.users | filter: controller.search track by $index">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <button class="btn btn-xs btn-success" ng-click="controller.edit(user.id)">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button class="btn btn-xs btn-danger" ng-click="controller.remove(user.id)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div> 
+        </div>
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/3rdparty/ui-bootstrap.js"></script>
+        <script src="js/3rdparty/ui-bootstrap-tpls.js"></script>
+        <script src="js/module/user-module.js"></script>
+        <script src="js/service/user-service.js"></script>
+        <script src="js/controller/user-controller.js"></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+.content {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #eff1ef;
+    border-radius: 4px;
+}
+
+.modal-header, .modal-footer {
+    background-color: #eff1ef;
+    border-radius: 4px;
+}
+
+label::after {
+    content: ' *';
+    color: #FF0000;
+}
+
+.div-header {
+    display: inline-flex;
+}
+
+.div-header > button {
+    margin-right: 10px;
+}

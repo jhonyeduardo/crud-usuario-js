@@ -1,0 +1,86 @@
+<div class="modal-header">
+  <h2>Cadastrar Usuário</h2>
+</div>
+<div class="modal-body">
+        <form name="formUser">
+            <div class="row">
+                <div class="form-group col-md-6 col-lg-6">
+                    <label for="nome">Nome</label>
+                    <input type="text" 
+                           class="form-control"
+                           placeholder="Digite o seu nome.."
+                           id="nome" 
+                           ng-model="controller.user.name"
+                           ng-required="true"
+                           ng-maxlength="40"
+                           autofocus>
+                </div>
+
+                <div class="form-group col-md-6 col-lg-6">
+                    <label for="lastName">Sobrenome</label>
+                    <input type="text" 
+                           class="form-control"
+                           placeholder="Digite o seu sobrenome.."
+                           id="lastName" 
+                           ng-model="controller.user.lastName"
+                           ng-maxlength="40">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4 col-lg-4">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" 
+                           placeholder="Digite o seu email.." 
+                           id="email" 
+                           ng-model="controller.user.email" 
+                           ng-required="true">
+                </div>
+                
+                <div class="form-group col-md-4 col-lg-4">
+                    <label for="phone">Telefone</label>
+                    <input type="text" 
+                           class="form-control" 
+                           placeholder="(99) 9999-9999" 
+                           id="phone" 
+                           ng-model="controller.user.phone" 
+                           ng-required="true" 
+                           ng-pattern="/\(\d{2}\)\s?\d{4,5}-?\d{4}/">
+                </div>
+                <div class="form-group col-md-4 col-lg-4">
+                   <label for="state">Estado</label>
+                   <input type="text" 
+                          class="form-control" 
+                          placeholder="Digite o seu estado.." 
+                          id="state" 
+                          ng-model="controller.user.state" 
+                          ng-required="true">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                   <label for="neighborhood">Bairro</label>
+                   <input type="text" 
+                          class="form-control" 
+                          placeholder="Digite o seu bairro.." 
+                          id="neighborhood"
+                          name="neighborhood"
+                          ng-model="controller.user.neighborhood"
+                          ng-required="true">
+                </div>
+                
+                <div class="form-group col-md-6">
+                   <label for="street">Rua</label>
+                   <input type="text" 
+                          class="form-control" 
+                          placeholder="Digite o sua rua.." 
+                          id="street" 
+                          ng-model="controller.user.street" 
+                          ng-required="true">
+                </div>
+            </div>
+        </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="controller.save()" ng-disabled="formUser.$invalid">Salvar</button>
+    <button class="btn btn-warning" ng-click="controller.cancel()">Fechar</button>
+</div>
