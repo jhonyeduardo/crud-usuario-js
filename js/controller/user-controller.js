@@ -15,9 +15,7 @@
         self.showFormUser = showFormUser;
         self.remove = remove;
         self.edit = edit;
-        self.users = [{name: "Jhony Eduardo", lastName: "Senem", email: "jhony@totvs.com"}, 
-                      {name: "Henrique Senem", lastName: "Senem", email: "henrique@totvs.com"}, 
-                      {name: "Mikaela Iwa", lastName: "Senem", email: "mika@totvs.com"}];
+        self.users = [];
         
         function remove(id) {
             model.remove(id);
